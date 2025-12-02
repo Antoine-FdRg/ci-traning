@@ -7,6 +7,8 @@ on:
   push:
     branches:
       - '*'
+    paths:
+      -  'improve.txt'
   pull_request:
     branches: [master]
 
@@ -29,7 +31,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm ci
+      - run: npm i
       - run: npm test
   nest-test:
     runs-on: ubuntu-latest
@@ -49,6 +51,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm ci
+      - run: npm i
       - run: npm run test:nestjs
 
