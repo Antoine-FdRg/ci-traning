@@ -75,7 +75,7 @@ describe('/api', () => {
         .post('/order', orderToAdd);
 
       //Assert
-      expect(orderAddResult.status).toBe(404);
+      expect(orderAddResult.status).toBe(403);
     });
 
     test('When order failed, send mail to admin', async () => {
